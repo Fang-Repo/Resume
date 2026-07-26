@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fang Xu — Assistant Professor of Special Education | Heritage University</title>
+<style>
+  :root {
+    --crimson: #8B1A2B;
+    --crimson-light: #A51D30;
+    --navy: #1B3A5C;
+    --navy-light: #2A5A8C;
+    --text: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-muted: #6b6b6b;
+    --bg: #FAFAF8;
+    --bg-warm: #F5F0EB;
+    --white: #FFFFFF;
+    --border: #E0DBD5;
+    --border-light: #EDE9E4;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --radius: 2px;
+    --sidebar-width: 220px;
+    --content-max: 780px;
+    --header-height: 0px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1.5rem;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ===== TYPOGRAPHY ===== */
+  h1, h2, h3, h4, .serif {
+    font-family: Georgia, 'Times New Roman', Garamond, 'EB Garamond', serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: var(--navy);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--crimson);
+    display: inline-block;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: var(--crimson);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  a:hover { color: var(--crimson-light); text-decoration: underline; }
+
+  p { margin-bottom: 1rem; color: var(--text-secondary); }
+
+  /* ===== LAYOUT ===== */
+  .page-wrapper {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 4rem;
+    gap: 3rem;
+  }
+
+  /* ===== SIDEBAR ===== */
+  .sidebar {
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+  }
+
+  .sidebar-inner {
+    position: sticky;
+    top: 2rem;
+  }
+
+  .profile-card {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .profile-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--bg-warm) 0%, #E8E0D5 100%);
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--white);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+  }
+
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    display: block;
+    transform: scale(1.2);
+  }
+
+  .sidebar-name {
+    font-family: Georgia, serif;
+    font-size: 1.35rem;
+    color: var(--navy);
+    margin-bottom: 0.15rem;
+  }
+
+  .sidebar-title {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+  }
+
+  .sidebar-affiliation {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-contact {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar-contact a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--bg-warm);
+    color: var(--navy);
+    transition: all 0.2s ease;
+  }
+
+  .sidebar-contact a:hover {
+    background: var(--crimson);
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .sidebar-contact svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* ===== SIDEBAR NAV ===== */
+  .sidebar-nav {
+    list-style: none;
+    border-left: 2px solid var(--border);
+  }
+
+  .sidebar-nav li { margin: 0; }
+
+  .sidebar-nav a {
+    display: block;
+    padding: 0.45rem 0 0.45rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    border-left: 2px solid transparent;
+    margin-left: -2px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .sidebar-nav a:hover,
+  .sidebar-nav a.active {
+    color: var(--crimson);
+    border-left-color: var(--crimson);
+    text-decoration: none;
+    background: linear-gradient(90deg, rgba(139,26,43,0.04) 0%, transparent 100%);
+  }
+
+  /* ===== MOBILE NAV (hidden on desktop) ===== */
+  .mobile-nav {
+    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,250,248,0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 1rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-nav-inner {
+    display: flex;
+    gap: 0;
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+
+  .mobile-nav a {
+    display: inline-block;
+    padding: 0.75rem 0.9rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    letter-spacing: 0.02em;
+  }
+
+  .mobile-nav a:hover,
+  .mobile-nav a.active {
+    color: var(--crimson);
+    border-bottom-color: var(--crimson);
+    text-decoration: none;
+  }
+
+  /* ===== MAIN CONTENT ===== */
+  .main-content {
+    flex: 1;
+    min-width: 0;
+    max-width: var(--content-max);
+  }
+
+  /* ===== HEADER SECTION ===== */
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .page-header .title-line {
+    font-family: Georgia, serif;
+    font-size: 1.15rem;
+    color: var(--crimson);
+    margin-bottom: 0.3rem;
+    font-style: italic;
+  }
+
+  .page-header .affiliation-line {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+  }
+
+  .page-header .contact-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .page-header .contact-line a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  .page-header .contact-line a:hover { color: var(--crimson); text-decoration: none; }
+
+  .page-header .contact-line svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  /* ===== CONTENT SECTIONS ===== */
+  .content-section {
+    margin-bottom: 2.75rem;
+  }
+
+  .content-section:last-child { margin-bottom: 0; }
+
+  .section-intro {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  /* ===== RESEARCH INTEREST TAGS ===== */
+  .interest-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .interest-list li {
+    font-size: 0.85rem;
+    background: var(--bg-warm);
+    color: var(--navy);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    letter-spacing: 0.01em;
+    border: 1px solid var(--border-light);
+  }
+
+  /* ===== PUBLICATIONS ===== */
+  .pub-list {
+    list-style: none;
+    counter-reset: pub;
+  }
+
+  .pub-list li {
+    counter-increment: pub;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    padding-left: 2.2rem;
+    position: relative;
+  }
+
+  .pub-list li:last-child { border-bottom: none; }
+
+  .pub-list li::before {
+    content: counter(pub) ".";
+    position: absolute;
+    left: 0;
+    top: 0.9rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: Georgia, serif;
+    min-width: 1.5rem;
+  }
+
+  .pub-list li .pub-authors { color: var(--text); }
+
+  .pub-list li .pub-title {
+    font-style: italic;
+  }
+
+  .pub-list li .pub-journal {
+    color: var(--navy);
+  }
+
+  .pub-list li .pub-doi {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    word-break: break-all;
+  }
+
+  .pub-list li .pub-doi a {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+
+  .pub-list li .pub-doi a:hover { color: var(--crimson); }
+
+  .pub-note {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-left: 0.3rem;
+  }
+
+  .pub-section-label {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    color: var(--navy);
+    margin: 1.5rem 0 0.75rem;
+    font-style: italic;
+  }
+
+  /* ===== GRANTS CARDS ===== */
+  .grants-card-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .grant-card {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    padding: 1rem 1.15rem;
+    transition: box-shadow 0.2s ease;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .grant-card:hover { box-shadow: var(--shadow-md); }
+
+  .grant-card .card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .card-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.15rem 0.55rem;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    text-transform: uppercase;
+  }
+  .badge-pi       { background: var(--navy);   color: var(--white); }
+  .badge-coi      { background: #2A5A8C;      color: var(--white); }
+  .badge-collab   { background: #4A7FB5;      color: var(--white); }
+  .badge-ra       { background: var(--text-muted); color: var(--white); }
+
+  .card-project {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.2rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+  }
+
+  .card-meta .meta-icon { opacity: 0.7; margin-right: 0.15rem; }
+
+  .card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.35rem;
+  }
+
+  .card-amount {
+    font-family: Georgia, serif;
+    color: var(--crimson);
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+
+  .card-status {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.15rem 0.55rem;
+    border-radius: 3px;
+    letter-spacing: 0.04em;
+  }
+  .status-funded   { background: #D9F0E2; color: #1B5E3A; }
+  .status-review   { background: #FFF3D6; color: #8B6914; }
+  .status-unfunded { background: #F0EDE8; color: #8C8C8C; }
+
+  /* ===== AWARDS LIST ===== */
+  .award-list {
+    list-style: none;
+  }
+
+  .award-list li {
+    display: flex;
+    gap: 1rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    align-items: baseline;
+  }
+
+  .award-list li:last-child { border-bottom: none; }
+
+  .award-date {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    min-width: 80px;
+    font-family: Georgia, serif;
+  }
+
+  /* ===== TEACHING ===== */
+  .course-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem 1.5rem;
+  }
+
+  .course-list li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding: 0.65rem 0.85rem;
+    background: var(--white);
+    border-left: 3px solid var(--navy);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .course-list li .course-code {
+    font-size: 0.75rem;
+    color: var(--crimson);
+    display: block;
+    font-family: system-ui, sans-serif;
+    letter-spacing: 0.03em;
+  }
+
+  /* ===== PRESENTATIONS ===== */
+  .pres-list {
+    list-style: none;
+  }
+
+  .pres-list li {
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  .pres-list li:last-child { border-bottom: none; }
+
+  .pres-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    vertical-align: middle;
+  }
+
+  .pres-label-invited {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .pres-label-conference {
+    background: var(--bg-warm);
+    color: var(--navy);
+    border: 1px solid var(--border);
+  }
+
+  /* ===== FOOTER ===== */
+  .page-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+  }
+
+  .page-footer .motto {
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: var(--navy);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ===== SCROLL TO TOP ===== */
+  .scroll-top {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    z-index: 50;
+  }
+
+  .scroll-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .scroll-top:hover { background: var(--crimson); }
+
+  .scroll-top svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    html { font-size: 16px; }
+
+    .page-wrapper {
+      flex-direction: column;
+      padding: 1.25rem 1.25rem 2.5rem;
+      gap: 0;
+    }
+
+    .sidebar {
+      width: 100%;
+    }
+
+    .sidebar-inner {
+      position: static;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .profile-card {
+      text-align: left;
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .profile-photo {
+      width: 64px;
+      height: 64px;
+      margin: 0;
+      border-width: 2px;
+    }
+
+    .profile-initials { font-size: 1.4rem; }
+
+    .sidebar-name { font-size: 1.1rem; }
+    .sidebar-title { font-size: 0.75rem; margin-bottom: 0.15rem; }
+    .sidebar-affiliation { font-size: 0.72rem; margin-bottom: 0; }
+    .sidebar-contact { margin-bottom: 0; margin-left: auto; gap: 0.5rem; }
+    .sidebar-contact a { width: 30px; height: 30px; }
+    .sidebar-contact svg { width: 14px; height: 14px; }
+
+    .sidebar-nav { display: none; }
+
+    .mobile-nav { display: block; }
+
+    .page-header { display: none; }
+
+    .main-content { max-width: 100%; }
+
+    .course-list { grid-template-columns: 1fr; }
+
+    .grant-card { padding: 0.85rem; }
+
+    .content-section { margin-bottom: 2rem; }
+  }
+
+  @media (max-width: 480px) {
+    .page-wrapper { padding: 1rem 1rem 2rem; }
+
+    .sidebar-inner { flex-wrap: wrap; }
+
+    .sidebar-contact { margin-left: 0; }
+
+    .award-list li { flex-direction: column; gap: 0.15rem; }
+
+    .mobile-nav a { padding: 0.65rem 0.7rem; font-size: 0.75rem; }
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    .sidebar-nav, .mobile-nav, .scroll-top { display: none !important; }
+
+    .page-wrapper { display: block; padding: 0; max-width: 100%; }
+
+    .sidebar { width: 100%; }
+    .sidebar-inner { position: static; }
+
+    .content-section { page-break-inside: avoid; }
+
+    body { font-size: 11pt; color: #000; background: #fff; }
+    a { color: #000; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ===== MOBILE NAVIGATION ===== -->
+  <nav class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-inner">
+      <a href="#biography">Biography</a>
+      <a href="#appointments">Appointments</a>
+      <a href="#publications">Publications</a>
+      <a href="#grants">Grants</a>
+      <a href="#awards">Awards</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#service">Service</a>
+      <a href="#presentations">Presentations</a>
+      <a href="#skills">Skills</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- ===== LEFT SIDEBAR ===== -->
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <div class="profile-card">
+          <div class="profile-photo" aria-label="Professor photo">
+            <img src="Avatar.jpg" alt="Fang Xu" />
+          </div>
+          <div class="sidebar-name">Fang Xu, Ph.D.</div>
+          <div class="sidebar-title">Assistant Professor<br>Special Education</div>
+          <div class="sidebar-affiliation">Teacher Preparation in Special Education<br>Heritage University</div>
+          <div class="sidebar-contact">
+            <a href="mailto:xu_f@heritage.edu" title="Email" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+            </a>
+            <a href="https://scholar.google.com/citations?user=1YvzJE4AAAAJ&amp;hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+            </a>
+            <a href="https://www.researchgate.net/profile/Fang-Xu-42" target="_blank" rel="noopener" title="ResearchGate" aria-label="ResearchGate">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.5 14h-1.25c-.966 0-1.75-.784-1.75-1.75v-4.5c0-.966.784-1.75 1.75-1.75H16.5v8zm-9.75 0c-.966 0-1.75-.784-1.75-1.75v-4.5c0-.966.784-1.75 1.75-1.75H8v8H6.75z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <ul class="sidebar-nav" id="sidebarNav">
+          <li><a href="#biography">Biography &amp; Research</a></li>
+          <li><a href="#appointments">Appointments</a></li>
+          <li><a href="#publications">Selected Publications</a></li>
+          <li><a href="#grants">Research Grants</a></li>
+          <li><a href="#awards">Honors &amp; Awards</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#service">Professional Service</a></li>
+          <li><a href="#presentations">Presentations</a></li>
+          <li><a href="#skills">Skills &amp; Credentials</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+
+      <!-- Header (visible on desktop) -->
+      <header class="page-header">
+        <h1>Fang Xu</h1>
+        <div class="title-line">Assistant Professor of Special Education</div>
+        <div class="affiliation-line">Teacher Preparation in Special Education Program &middot; Heritage University</div>
+        <div class="contact-line">
+          <a href="mailto:xu_f@heritage.edu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+            xu_f@heritage.edu
+          </a>
+          <a href="https://scholar.google.com/citations?user=1YvzJE4AAAAJ&amp;hl=en" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+            Google Scholar
+          </a>
+          <a href="https://www.researchgate.net/profile/Fang-Xu-42" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.5 14h-1.25c-.966 0-1.75-.784-1.75-1.75v-4.5c0-.966.784-1.75 1.75-1.75H16.5v8zm-9.75 0c-.966 0-1.75-.784-1.75-1.75v-4.5c0-.966.784-1.75 1.75-1.75H8v8H6.75z"/></svg>
+            ResearchGate
+          </a>
+        </div>
+      </header>
+
+      <!-- ===== BIOGRAPHY & RESEARCH INTERESTS ===== -->
+      <section class="content-section" id="biography">
+        <h2>Biography &amp; Research Interests</h2>
+
+        <p class="section-intro">
+          Dr. Fang Xu is an Assistant Professor in the Teacher Preparation in Special Education Program at Heritage University. She earned her Ph.D. in Special Education with a concentration in Early Childhood Studies from the University of Florida (2023), an M.Ed. in Special Education from Zhejiang Normal University (2017), and a B.Med. in Medical Laboratory Science from Shandong First Medical University (2013).
+        </p>
+
+        <p class="section-intro">
+          Dr. Xu's research lies at the intersection of <strong>special education</strong>, <strong>early childhood intervention</strong>, and <strong>teacher professional development</strong>. Her work focuses on improving outcomes for young children with disabilities through evidence-based instructional practices, with particular emphasis on embedded instruction, high-leverage practices for special educators, and the use of digital and AI-assisted interventions for children with autism spectrum disorder. She is also deeply invested in understanding the challenges facing new special education teachers in rural settings and developing effective supports to promote teacher retention and well-being.
+        </p>
+
+        <p class="section-intro">
+          Her methodological expertise spans single-case experimental designs, systematic reviews and meta-analyses, mixed-methods research, and observational measurement. Dr. Xu's scholarship has appeared in leading journals including the <em>Journal of Autism and Developmental Disorders</em>, <em>Early Childhood Research Quarterly</em>, <em>Education and Information Technologies</em>, and <em>Reading &amp; Writing Quarterly</em>.
+        </p>
+
+        <h3 style="margin-top:1.5rem;">Research Areas</h3>
+        <ul class="interest-list">
+          <li>Special Education &amp; Early Childhood Studies</li>
+          <li>High-Leverage Practices (HLPs) for Special Educators</li>
+          <li>Digital Interventions for Children with ASD</li>
+          <li>Embedded Instruction &amp; Inclusive Education</li>
+          <li>Reading Interventions &amp; Student Engagement</li>
+          <li>Teacher Preparation, Retention &amp; Professional Development</li>
+          <li>AI Applications in Special Education</li>
+          <li>Friendship &amp; Social Development in Autism</li>
+          <li>Meta-Analysis &amp; Single-Case Experimental Designs</li>
+        </ul>
+      </section>
+
+      <!-- ===== PROFESSIONAL APPOINTMENTS ===== -->
+      <section class="content-section" id="appointments">
+        <h2>Professional Appointments</h2>
+        <ul class="award-list">
+          <li><span class="award-date">2023&ndash;Present</span> Assistant Professor, Teacher Preparation Program in Special Education, College of Education, Heritage University</li>
+          <li><span class="award-date">2022&ndash;2023</span> Graduate Teaching Assistant, Bachelor of Arts in Education Program, University of Florida</li>
+          <li><span class="award-date">2022&ndash;2023</span> University Supervisor for Student Teachers, Bachelor of Arts in Education Program, University of Florida</li>
+          <li><span class="award-date">2019&ndash;2022</span> Research Assistant, FL-EPIC Early Steps Professional Development Project, Anita Zucker Center for Excellence in Early Childhood Studies, University of Florida</li>
+          <li><span class="award-date">2018&ndash;2019</span> Research Assistant, Embedded Instruction California Project, Anita Zucker Center for Excellence in Early Childhood Studies, University of Florida</li>
+          <li><span class="award-date">2015&ndash;2016</span> Teaching Assistant, Department of Special Education, College of Children Development and Education, Zhejiang Normal University, China</li>
+        </ul>
+      </section>
+
+      <!-- ===== SELECTED PUBLICATIONS ===== -->
+      <section class="content-section" id="publications">
+        <h2>Selected Publications</h2>
+
+        <!-- Peer-Reviewed -->
+        <ol class="pub-list">
+          <li>
+            <span class="pub-authors">Zeng, S., An, G., <strong>Xu, F.</strong>, Lee, Y., &amp; Douglass, A.</span>
+            (2026).
+            <span class="pub-title">Under the radar: Unpacking center-based program providers' use of informal removals for children with challenging behaviors.</span>
+            <span class="pub-journal"><em>Early Childhood Education Journal</em></span>.
+            <span class="pub-doi"><a href="https://doi.org/10.1007/s10643-026-02167-y" target="_blank" rel="noopener">doi:10.1007/s10643-026-02167-y</a></span>
+          </li>
+          <li>
+            <span class="pub-authors">Zhang, Y., Gu, P., Zhang, M., Ma, Z., Zhang, Y., Chen, L., &amp; <strong>Xu, F.</strong></span>
+            (2026).
+            <span class="pub-title">Parents' behavior intention and acceptance of AI for children with ASD.</span>
+            <span class="pub-journal"><em>International Journal of Human–Computer Interaction</em></span>, 1–18.
+            <span class="pub-doi"><a href="https://doi.org/10.1080/10447318.2026.2633211" target="_blank" rel="noopener">doi:10.1080/10447318.2026.2633211</a></span>
+          </li>
+          <li>
+            <span class="pub-authors">Zeng, S., Ai, J., Kabir, P., <strong>Xu, F.</strong>, Zhang, Y., &amp; Douglass, A.</span>
+            (2025).
+            <span class="pub-title">Teacher turnover and workforce retention: Supporting teachers working with children with challenging behaviors.</span>
+            <span class="pub-journal"><em>Early Childhood Research Quarterly</em></span>.
+            <span class="pub-doi"><a href="https://doi.org/10.1007/s10643-025-01994-9" target="_blank" rel="noopener">doi:10.1007/s10643-025-01994-9</a></span>
+          </li>
+          <li>
+            <span class="pub-authors"><strong>Xu, F.</strong>, Gage, N., Lane, H., Contesse, V., O'Steen, G., &amp; Bason, F.</span>
+            (2025).
+            <span class="pub-title">An observational study of student reading engagement during UFLI intensive intervention.</span>
+            <span class="pub-journal"><em>Reading &amp; Writing Quarterly</em></span>.
+            <span class="pub-doi"><a href="https://doi.org/10.1080/10573569.2024.2448195" target="_blank" rel="noopener">doi:10.1080/10573569.2024.2448195</a></span>
+          </li>
+          <li>
+            <span class="pub-authors"><strong>Xu, F.</strong></span>
+            (2025).
+            <span class="pub-title">Reading is an adventure: Game and parent guide.</span>
+            <span class="pub-journal">Yakima Valley Partners for Education &amp; Heritage University.</span>
+          </li>
+          <li>
+            <span class="pub-authors">He, H., He, Y., <strong>Xu, F.</strong>, &amp; Geng, K.</span>
+            (2025).
+            <span class="pub-title">Powerlessness and transcendence: A qualitative study on preschool teachers' dilemmas and support in implementing inclusive education</span>
+            [In Chinese].
+            <span class="pub-journal"><em>Chinese Journal of Special Education</em></span>, 12, 88–96.
+          </li>
+          <li>
+            <span class="pub-authors">Gu, P., <strong>Xu, F.</strong>, Chen, L., Ma, Z., Zhang, M., &amp; Zhang, Y.</span>
+            (2024).
+            <span class="pub-title">Technological affordances and applications of chatbots for conversational skill interventions in autism: A scoping review.</span>
+            <span class="pub-journal"><em>Education and Information Technologies</em></span>.
+            <span class="pub-doi"><a href="https://doi.org/10.1007/s10639-024-13191-z" target="_blank" rel="noopener">doi:10.1007/s10639-024-13191-z</a></span>
+          </li>
+          <li>
+            <span class="pub-authors"><strong>Xu, F.</strong>, Gage, N., Zeng, S., Zhang, M., Iun, A., O'Riordan, M., &amp; Kim, E.</span>
+            (2024).
+            <span class="pub-title">The use of digital interventions for children and adolescents with ASD – A meta-analysis.</span>
+            <span class="pub-journal"><em>Journal of Autism and Developmental Disorders</em></span>.
+            <span class="pub-doi"><a href="https://doi.org/10.1007/s10803-024-06563-4" target="_blank" rel="noopener">doi:10.1007/s10803-024-06563-4</a></span>
+          </li>
+          <li>
+            <span class="pub-authors">Fu, W., Ma, Z., <strong>Xu, F.</strong>, Gu, P., He, S., Yang, L., Zhang, Y., &amp; Zhou, W.</span>
+            (2024).
+            <span class="pub-title">A pilot study of Chinese parents' perceptions of friendships in autistic children.</span>
+            <span class="pub-journal"><em>International Journal of Developmental Disabilities</em></span>.
+            <span class="pub-doi"><a href="https://doi.org/10.1080/20473869.2024.2428896" target="_blank" rel="noopener">doi:10.1080/20473869.2024.2428896</a></span>
+          </li>
+          <li>
+            <span class="pub-authors">Zheng, Q., Snyder, P., &amp; <strong>Xu, F.</strong></span>
+            (2024).
+            <span class="pub-title">Characterizing preschool teachers' use of teaching practices to promote young children's self-determination skills.</span>
+            <span class="pub-journal"><em>Early Childhood Education Journal</em></span>, 1–14.
+            <span class="pub-doi"><a href="https://doi.org/10.1007/s10643-024-01705-w" target="_blank" rel="noopener">doi:10.1007/s10643-024-01705-w</a></span>
+          </li>
+          <li>
+            <span class="pub-authors">Zhong, M., Qiu, J., Zhao, H., <strong>Xu, F.</strong>, Iun, A., Shen, M., &amp; Zeng, S.</span>
+            (2023).
+            <span class="pub-title">Chinese parent relationship and child social-emotional development: Insights for three-child policy.</span>
+            <span class="pub-journal"><em>Current Psychology</em>, 43(6), 5104–5116.</span>
+            <span class="pub-doi"><a href="https://doi.org/10.1007/s12144-023-04706-x" target="_blank" rel="noopener">doi:10.1007/s12144-023-04706-x</a></span>
+          </li>
+          <li>
+            <span class="pub-authors"><strong>Xu, F.</strong></span>
+            (2017).
+            <span class="pub-title">A study on improving ADHD children on-task behavior in inclusive environment</span> [Master's thesis].
+            <span class="pub-journal">Zhejiang Normal University.</span>
+          </li>
+          <li>
+            <span class="pub-authors"><strong>Xu, F.</strong>, Liao, T., Chen, G., &amp; Zhu, Z.</span>
+            (2016).
+            <span class="pub-title">A review: Using functional behavioral assessment to improve on-task behavior of special children</span>
+            [In Chinese].
+            <span class="pub-journal"><em>Journal of Modern Special Education (Academic)</em></span>, 24, 3–9.
+            <span class="pub-doi">doi:10.3969/j.issn.1004-8014.2016.24.001</span>
+          </li>
+          <li>
+            <span class="pub-authors">Chen, G., &amp; <strong>Xu, F.</strong></span>
+            (2016).
+            <span class="pub-title">A case study of functional behavior assessment on problem behaviors of a student with autism in class</span>
+            [In Chinese].
+            <span class="pub-journal"><em>Journal of Modern Special Education (Academic)</em></span>, 15, 61–66.
+            <span class="pub-doi">doi:10.3969/j.issn.1004-8014.2016.15.011</span>
+          </li>
+          <li>
+            <span class="pub-authors">Zhu, Z., &amp; <strong>Xu, F.</strong></span>
+            (2015).
+            <span class="pub-title">The exploration of Seguin's physiological method and thoughts of combining medicine and education</span>
+            [In Chinese].
+            <span class="pub-journal"><em>Educational Research and Experiment</em></span>, 167(06), 84–89.
+          </li>
+          <li>
+            <span class="pub-authors">Zhu, Z., Zhang, X., Chai, L., &amp; <strong>Xu, F.</strong></span>
+            (2015).
+            <span class="pub-title">The status quo of mainstreaming teachers in Zhejiang Province and its countermeasures</span>
+            [In Chinese].
+            <span class="pub-journal"><em>Journal of Shaoxing University</em></span>, 35(2), 104–110.
+            <span class="pub-doi">doi:10.16169/j.issn.1008-293x.s.2015.02.021</span>
+          </li>
+        </ol>
+
+        <!-- Under Review -->
+        <div class="pub-section-label">Under Review</div>
+        <ol class="pub-list" start="17">
+          <li>
+            <span class="pub-authors">Yuan, L., <strong>Xu, F.</strong>, Huang, Y., &amp; Li, Z.</span>
+            (under review).
+            <span class="pub-title">Enhancing activity-based intervention delivery through performance feedback: A study on fidelity assessment tools.</span>
+            <span class="pub-journal"><em>Studies in Educational Evaluation</em></span>.
+          </li>
+        </ol>
+
+        <!-- In Progress -->
+        <div class="pub-section-label">In Progress</div>
+        <ol class="pub-list" start="18">
+          <li>
+            <span class="pub-authors"><strong>Xu, F.</strong></span> (Lead Investigator).
+            <span class="pub-title">Applying job-embedded professional development to improve special educators' use of High-Leverage Practices.</span>
+            <span class="pub-note">[Manuscript write-up]</span> Collaborators: Nicholas Gage (WestEd), Danielle Waterfield, Jun Ai, Yi Zhang (University of Tennessee, Knoxville).
+          </li>
+          <li>
+            <span class="pub-authors"><strong>Xu, F.</strong></span> (Lead Investigator).
+            <span class="pub-title">Exploring support received and needs of new special education teachers in rural areas.</span>
+            <span class="pub-note">[Data analysis]</span> Collaborators: Jun Ai, Nicholas Gage (WestEd), Jing Huang (University of Florida).
+          </li>
+          <li>
+            <span class="pub-authors">Mathien, T., Shannon, D.</span> (&amp; <strong>Xu, F.</strong>, Co-Investigator).
+            <span class="pub-title">Teacher supervision to classroom application: New teachers' perspectives on implementing FEAPs.</span>
+            <span class="pub-note">[Manuscript write-up]</span> Collaborators: Tara Mathien, Darbianne Shannon (University of Florida).
+          </li>
+          <li>
+            <span class="pub-authors">Zeng, S., Liu, X., Kim, M.</span> (&amp; <strong>Xu, F.</strong>, Co-Investigator).
+            <span class="pub-title">Overview of meta-analyses on non-pharmacological intervention for children and youth with attention-deficit/hyperactivity disorder.</span>
+            <span class="pub-note">[Manuscript write-up]</span> Collaborators: Songtian Zeng, Xiaotong Liu, Kim Michael (University of Massachusetts, Boston).
+          </li>
+          <li>
+            <span class="pub-authors">Gu, B., He, H., Ma, Z.</span> (&amp; <strong>Xu, F.</strong>, Co-Investigator).
+            <span class="pub-title">Friendship matters: Chinese educators' views on social and developmental priorities for students with autism.</span>
+            <span class="pub-note">[Manuscript write-up]</span> Collaborators: Beidi Gu, Huizhong He (Beijing Normal University), Zijie Ma (Stride Autism Centers).
+          </li>
+          <li>
+            <span class="pub-authors"><strong>Xu, F.</strong></span> (Lead Investigator).
+            <span class="pub-title">"I know friendship is important, but…" A mixed methods study of Chinese teachers' perceptions of children with autism.</span>
+            <span class="pub-note">[Data analysis]</span> Collaborators: Huizhong He, Beidi Gu, Zijie Ma.
+          </li>
+          <li>
+            <span class="pub-authors"><strong>Xu, F.</strong></span> (Lead Investigator).
+            <span class="pub-title">Friendship as conditional goal: A mixed-methods study of Chinese parents' priorities and support needs for children with autism.</span>
+            <span class="pub-note">[Data analysis]</span> Collaborators: Huizhong He, Beidi Gu, Zijie Ma.
+          </li>
+        </ol>
+      </section>
+
+      <!-- ===== RESEARCH GRANTS ===== -->
+      <section class="content-section" id="grants">
+        <h2>Research Grants</h2>
+        <ul class="grants-card-list">
+          <!-- ===== FUNDED ===== -->
+          <li class="grant-card">
+            <div class="card-top">
+              <span class="card-badge badge-pi">PI</span>
+              <div class="card-project">Teaching with Feelings: Building Emotionally Responsive Future Teachers through High-Leverage Practices</div>
+            </div>
+            <div class="card-meta">
+              <span><span class="meta-icon">🏛</span> Heritage University</span>
+              <span><span class="meta-icon">📅</span> 2026&ndash;2027</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-amount">$9,250</span>
+              <span class="card-status status-funded">Funded</span>
+            </div>
+          </li>
+
+          <li class="grant-card">
+            <div class="card-top">
+              <span class="card-badge badge-pi">PI</span>
+              <div class="card-project">HU Teacher Preparation Program Partnership with Our Autism Journey Event</div>
+            </div>
+            <div class="card-meta">
+              <span><span class="meta-icon">🏛</span> HU Advancement</span>
+              <span><span class="meta-icon">📅</span> 2026</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-amount">$500</span>
+              <span class="card-status status-funded">Funded</span>
+            </div>
+          </li>
+
+          <li class="grant-card">
+            <div class="card-top">
+              <span class="card-badge badge-pi">PI</span>
+              <div class="card-project">REVISE-HLPs: Refining and Embedding a Validated Instrument into Supervision of High-Leverage Practices</div>
+            </div>
+            <div class="card-meta">
+              <span><span class="meta-icon">🏛</span> WA CEEDAR Seed Grant</span>
+              <span><span class="meta-icon">📅</span> 2025&ndash;2026</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-amount">$6,000</span>
+              <span class="card-status status-funded">Funded</span>
+            </div>
+          </li>
+
+          <li class="grant-card">
+            <div class="card-top">
+              <span class="card-badge badge-pi">PI</span>
+              <div class="card-project">JUST-u-HLPs: Job-Embedded Support for Teachers Using High-Leverage Practices</div>
+            </div>
+            <div class="card-meta">
+              <span><span class="meta-icon">🏛</span> WA CEEDAR Seed Grant</span>
+              <span><span class="meta-icon">📅</span> 2024&ndash;2025</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-amount">$5,000</span>
+              <span class="card-status status-funded">Funded</span>
+            </div>
+          </li>
+
+          <li class="grant-card">
+            <div class="card-top">
+              <span class="card-badge badge-collab">Collab.</span>
+              <div class="card-project">Examining the Evolution of Mental Health Among Racial Minority Early Care and Education Workforce from 2019 to the COVID-19 Pandemic</div>
+            </div>
+            <div class="card-meta">
+              <span><span class="meta-icon">🏛</span> ACF, DHHS</span>
+              <span><span class="meta-icon">📅</span> 2024&ndash;2025</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-amount">$100,000</span>
+              <span class="card-status status-funded">Funded; withdrawn</span>
+            </div>
+          </li>
+
+          <li class="grant-card">
+            <div class="card-top">
+              <span class="card-badge badge-collab">Consult.</span>
+              <div class="card-project">Initiative to Improve Reading Outcomes for All Students: Cradle to Career in Lower Yakima Valley</div>
+            </div>
+            <div class="card-meta">
+              <span><span class="meta-icon">🏛</span> Yakima Valley Partners for Education</span>
+              <span><span class="meta-icon">📅</span> 2023&ndash;2025</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-amount">$60,000</span>
+              <span class="card-status status-funded">Funded</span>
+            </div>
+          </li>
+
+          <li class="grant-card">
+            <div class="card-top">
+              <span class="card-badge badge-ra">RA</span>
+              <div class="card-project">FL-EPIC Early Steps Professional Development Project</div>
+            </div>
+            <div class="card-meta">
+              <span><span class="meta-icon">🏛</span> FL Department of Health, Children's Medical Services</span>
+              <span><span class="meta-icon">📅</span> 2019&ndash;2022</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-amount">$1,610,355</span>
+              <span class="card-status status-funded">Funded</span>
+            </div>
+          </li>
+
+          <li class="grant-card">
+            <div class="card-top">
+              <span class="card-badge badge-ra">RA</span>
+              <div class="card-project">Embedded Instruction California Project</div>
+            </div>
+            <div class="card-meta">
+              <span><span class="meta-icon">🏛</span> CA Department of Education</span>
+              <span><span class="meta-icon">📅</span> 2015&ndash;2021</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-amount">$1,883,343</span>
+              <span class="card-status status-funded">Funded</span>
+            </div>
+          </li>
+
+          <li class="grant-card">
+            <div class="card-top">
+              <span class="card-badge badge-ra">TA</span>
+              <div class="card-project">Second Evaluation of "Three Year Action Plan" on Kindergarten Students</div>
+            </div>
+            <div class="card-meta">
+              <span><span class="meta-icon">🏛</span> The People's Government of Zhejiang Province</span>
+              <span><span class="meta-icon">📅</span> 2014&ndash;2016</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-amount">N/A</span>
+              <span class="card-status status-funded">Funded</span>
+            </div>
+          </li>
+
+          <!-- ===== UNDER REVIEW ===== -->
+          <li class="grant-card">
+            <div class="card-top">
+              <span class="card-badge badge-pi">PI</span>
+              <div class="card-project">Establishing the Nation's and Washington's First Neuro-inclusive University Community Culturally Designed to Support Hispanic and Indigenous Neurodivergent Students</div>
+            </div>
+            <div class="card-meta">
+              <span><span class="meta-icon">🏛</span> Private Funders</span>
+              <span><span class="meta-icon">📅</span> 2026&ndash;2031</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-amount">$1,011,375</span>
+              <span class="card-status status-review">Under Review</span>
+            </div>
+          </li>
+
+          <li class="grant-card">
+            <div class="card-top">
+              <span class="card-badge badge-pi">PI</span>
+              <div class="card-project">U-SOAR SpEd: Upgrading Support Opportunities to Advance Regional Special Educators</div>
+            </div>
+            <div class="card-meta">
+              <span><span class="meta-icon">🏛</span> Personnel Development (84.325K)</span>
+              <span><span class="meta-icon">📅</span> 2026&ndash;2031</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-amount">$1,250,000</span>
+              <span class="card-status status-review">Under Review</span>
+            </div>
+          </li>
+
+          <!-- ===== UNFUNDED ===== -->
+          <li class="grant-card">
+            <div class="card-top">
+              <span class="card-badge badge-collab">Collab.</span>
+              <div class="card-project">RISE: Responsive Induction for Special Educators Project</div>
+            </div>
+            <div class="card-meta">
+              <span><span class="meta-icon">🏛</span> EIR Early-phase, OESE</span>
+              <span><span class="meta-icon">📅</span> 2024&ndash;2029</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-amount">$6,000,000</span>
+              <span class="card-status status-unfunded">Unfunded</span>
+            </div>
+          </li>
+
+          <li class="grant-card">
+            <div class="card-top">
+              <span class="card-badge badge-collab">PI (HU)</span>
+              <div class="card-project">TRAINER: Teacher Resources and Artificial Intelligence for Nurturing Educational Resilience</div>
+            </div>
+            <div class="card-meta">
+              <span><span class="meta-icon">🏛</span> EIR Early-phase, OESE</span>
+              <span><span class="meta-icon">📅</span> 2024&ndash;2029</span>
+            </div>
+            <div class="card-bottom">
+              <span class="card-amount">$6,000,000</span>
+              <span class="card-status status-unfunded">Unfunded</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===== HONORS & AWARDS ===== -->
+      <section class="content-section" id="awards">
+        <h2>Honors &amp; Awards</h2>
+        <ul class="award-list">
+          <li><span class="award-date">Jun 2026</span> Special Education Legislative Summit 2026 Scholarship (Washington State Lead), Alexandria, VA</li>
+          <li><span class="award-date">Nov 2025</span> Scholar, 2026&ndash;2027 Council for Exceptional Children Diversity Leadership Academy</li>
+          <li><span class="award-date">Nov 2025</span> DREAM In-Person Grant Writing Training for Special Education Faculty Travel Funds, Kansas City, MO</li>
+          <li><span class="award-date">Apr 2025</span> Special Education Legislative Summit Travel Grant 2025 by Teacher Education Division, Alexandria, VA</li>
+          <li><span class="award-date">Mar 2023</span> Doctoral Student Travel Grant, University of Florida</li>
+          <li><span class="award-date">2022&ndash;2023</span> Graduate Assistantship, University of Florida</li>
+          <li><span class="award-date">2018&ndash;2022</span> Graduate Fellowship, University of Florida</li>
+          <li><span class="award-date">May 2017</span> Outstanding Graduates Awards, Zhejiang Normal University</li>
+          <li><span class="award-date">Oct 2016</span> National Scholarship for Graduate Students, Zhejiang Normal University</li>
+          <li><span class="award-date">Oct 2016</span> First Prize Scholarship for Graduate Students, Zhejiang Normal University</li>
+          <li><span class="award-date">2014&ndash;2017</span> Second Prize Scholarship, Zhejiang Normal University</li>
+          <li><span class="award-date">Apr 2016</span> First Prize, First Session Essay Competition "All for Children," Hangzhou College of Early Childhood Teachers' Education, ZJNU</li>
+          <li><span class="award-date">Apr 2016</span> Second Prize, Lize Educational Annual Conference "Innovation of Education in Internet Plus," College of Teacher Education, ZJNU</li>
+        </ul>
+      </section>
+
+      <!-- ===== TEACHING ===== -->
+      <section class="content-section" id="teaching">
+        <h2>Teaching</h2>
+
+        <!-- Heritage University -->
+        <h3>Heritage University <span style="font-size:0.8rem;color:var(--text-muted);font-weight:400;">&mdash; Assistant Professor (08/2023&ndash;Present)</span></h3>
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.75rem;">Teacher Preparation Program in Special Education, College of Education</p>
+
+        <h4 style="font-size:0.95rem;color:var(--navy);margin:1rem 0 0.5rem;">Graduate Courses</h4>
+        <ul class="course-list">
+          <li><span class="course-code">SPED 525</span> Essential Special Educational Fundamental for K-8 Educator</li>
+          <li><span class="course-code">SPED 533</span> Behavior Management &amp; Positive Behavior Support</li>
+          <li><span class="course-code">SPED 538</span> Assessment &amp; Evaluation of Students with Disabilities</li>
+          <li><span class="course-code">SPED 537</span> Curriculum &amp; Instructional Strategies for Students with Mild Disabilities</li>
+          <li><span class="course-code">SPED 537</span> Curriculum &amp; Instructional Strategies for Students with Moderate and Severe Disabilities</li>
+          <li><span class="course-code">SPED 568</span> Special Education Law</li>
+          <li><span class="course-code">ED 549</span> Child Safety Issues</li>
+        </ul>
+
+        <h4 style="font-size:0.95rem;color:var(--navy);margin:1rem 0 0.5rem;">Undergraduate Courses</h4>
+        <ul class="course-list">
+          <li><span class="course-code">ED 324</span> Literacy Foundations</li>
+          <li><span class="course-code">ED 347B</span> Exceptional Learners and Inclusion</li>
+          <li><span class="course-code">ED 410B</span> Child Abuse and Neglect</li>
+          <li><span class="course-code">ED 336A</span> Methods in Health and Fitness</li>
+        </ul>
+
+        <!-- University of Florida -->
+        <h3 style="margin-top:1.5rem;">University of Florida <span style="font-size:0.8rem;color:var(--text-muted);font-weight:400;">&mdash; Instructor &amp; Teaching Assistant (08/2022&ndash;08/2023)</span></h3>
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem;">Department of Special Education, School Psychology, and Early Childhood Studies (SESPECS)</p>
+        <ul class="course-list">
+          <li><span class="course-code">EEC 3941</span> Practicum in Early Childhood Education <span style="font-size:0.78rem;color:var(--text-muted);">(Instructor, 01/2023&ndash;08/2023)</span></li>
+          <li><span class="course-code">EEC 3704</span> Supporting Early Childhood Learning &amp; Development <span style="font-size:0.78rem;color:var(--text-muted);">(TA, online course development)</span></li>
+          <li style="border-left-color:var(--crimson);"><span class="course-code" style="color:var(--navy);">COIL Project</span> Collaborative International Learning Project with Universidad San Francisco de Quito <span style="font-size:0.78rem;color:var(--text-muted);">(virtual exchange)</span></li>
+        </ul>
+
+        <!-- Zhejiang Normal University -->
+        <h3 style="margin-top:1.5rem;">Zhejiang Normal University <span style="font-size:0.8rem;color:var(--text-muted);font-weight:400;">&mdash; Teaching Assistant (2015&ndash;2016)</span></h3>
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem;">College of Early Childhood and Special Education, Hangzhou Campus</p>
+        <ul class="course-list">
+          <li>Introduction of Special Education</li>
+          <li>Instructional Strategies for Students with Visual Impairments</li>
+        </ul>
+
+        <!-- In-Service Teacher Training -->
+        <h3 style="margin-top:1.5rem;">In-Service Preschool Teacher Training <span style="font-size:0.8rem;color:var(--text-muted);font-weight:400;">&mdash; Instructor (2015&ndash;2016)</span></h3>
+        <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem;">College of Early Childhood and Special Education, Zhejiang Normal University, Hangzhou Campus</p>
+        <ul class="course-list">
+          <li>Child Development and Psychology</li>
+          <li>Inclusive Practices in Early Childhood Education</li>
+        </ul>
+
+        <!-- Fieldwork Supervision -->
+        <h3 style="margin-top:1.5rem;">Fieldwork &amp; Practicum Supervision</h3>
+        <p style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:0.25rem;"><strong>University of Florida</strong>, SESPECS, Bachelor of Arts in Education Program (08/2022&ndash;08/2023)</p>
+        <ul class="pres-list">
+          <li>Fall 2022: Supervised six settings in Gainesville, FL</li>
+          <li>Spring 2023: Supervised four settings in Gainesville, FL</li>
+        </ul>
+
+        <!-- K-12 Teaching -->
+        <h3 style="margin-top:1.5rem;">K&ndash;12 Teaching Experience</h3>
+        <ul class="award-list">
+          <li><span class="award-date">2015&ndash;2016</span> Intern Classroom Teacher, Hangzhou Healthy Experimental School, Hangzhou, China. Delivered teaching, classroom management, and individualized support to elementary students with intellectual disability and ASD.</li>
+          <li><span class="award-date">2014&ndash;2015</span> Intern Classroom Teacher, Hangzhou Zijinghua School, Hangzhou, China. Delivered teaching, observed instruction, and provided individualized support to elementary students with ASD.</li>
+          <li><span class="award-date">2016</span> Home Visitor &amp; Caregiver Trainer, Zhejiang Normal University. Provided home-visiting services and parent/caregiver training to families with children who have ASD.</li>
+        </ul>
+      </section>
+
+      <!-- ===== PROFESSIONAL SERVICE ===== -->
+      <section class="content-section" id="service">
+        <h2>Professional Service</h2>
+
+        <h3>Editorial &amp; Review Roles</h3>
+        <ul class="award-list">
+          <li><span class="award-date">2024&ndash;Present</span> Guest Consulting Editor, <em>Preventing School Failure: Alternative Education for Children and Youth</em></li>
+          <li><span class="award-date">2024&ndash;Present</span> Reviewer, <em>Journal of Autism and Developmental Disabilities</em></li>
+          <li><span class="award-date">2025&ndash;Present</span> Reviewer, <em>Reading and Writing Quarterly</em></li>
+          <li><span class="award-date">2024&ndash;Present</span> Reviewer, <em>Early Education and Development</em></li>
+          <li><span class="award-date">2024&ndash;Present</span> Reviewer, <em>Research in Autism Spectrum Disorders</em></li>
+          <li><span class="award-date">2025&ndash;Present</span> Reviewer, <em>Developmental Neurorehabilitation</em></li>
+          <li><span class="award-date">2025&ndash;Present</span> Reviewer, <em>International Journal of Developmental Disabilities</em></li>
+          <li><span class="award-date">2023&ndash;2025</span> Reviewer, Teacher Education Division Conference Proposal (05/2023, 05/2024, 05/2025)</li>
+          <li><span class="award-date">2024&ndash;2025</span> Reviewer, Council for Exceptional Children Conference Proposal (06/2024, 06/2025)</li>
+        </ul>
+
+        <h3 style="margin-top:1.25rem;">Leadership Positions</h3>
+        <ul class="award-list">
+          <li><span class="award-date">2026&ndash;Present</span> Committee Chair, WACTE Legislative Subcommittee</li>
+          <li><span class="award-date">2025&ndash;Present</span> Secretary, Washington Council for Exceptional Children (CEC)</li>
+        </ul>
+
+        <h3 style="margin-top:1.25rem;">Committee Memberships</h3>
+        <ul class="award-list">
+          <li><span class="award-date">2025&ndash;Present</span> Committee Member, WACTE Educator Development &amp; Student Learning Experience Subcommittee</li>
+          <li><span class="award-date">2025&ndash;Present</span> Committee Member, WA CEEDAR Policy Committee</li>
+          <li><span class="award-date">2024&ndash;2027</span> Committee Member, HU IRB Advisory Committee, Heritage University</li>
+          <li><span class="award-date">2023&ndash;2024</span> Committee Member, Undergraduate Curriculum Committee, Heritage University</li>
+          <li><span class="award-date">2024&ndash;Present</span> Committee Member, Graduate Curriculum Committee, Heritage University</li>
+          <li><span class="award-date">2024&ndash;Present</span> Committee Member, Program Review, Heritage University</li>
+        </ul>
+
+        <h3 style="margin-top:1.25rem;">Advising &amp; Board Roles</h3>
+        <ul class="award-list">
+          <li><span class="award-date">2023&ndash;Present</span> Advisor, Teacher Preparation Program, Heritage University</li>
+          <li><span class="award-date">2023&ndash;Present</span> Board Member, HU Special Education Advisory Board</li>
+        </ul>
+
+        <h3 style="margin-top:1.25rem;">Community &amp; Volunteer Service</h3>
+        <ul class="award-list">
+          <li><span class="award-date">2023</span> Community Outreach &amp; Event Support, 4th Annual Disability Resource Expo (Alachua County, FL)</li>
+          <li><span class="award-date">2020&ndash;2023</span> Mentor, Early Childhood and Special Education Association of Doctoral Studies, University of Florida (senior undergrad student, 2020&ndash;2023; junior doctoral student, 2022&ndash;2023)</li>
+          <li><span class="award-date">2018</span> Assistant Researcher, Hailiang Development Institute &mdash; Hailiang Special Education Center</li>
+          <li><span class="award-date">2017</span> Coordinator, Zhejiang Special Education Teacher Training Center &amp; Zhejiang Kindergarten Principal Training Center &amp; Zhejiang Kindergarten Teacher Training Center</li>
+          <li><span class="award-date">2015&ndash;2017</span> Consultant, Hangzhou Xingjuexing Autism Family Resource Center</li>
+          <li><span class="award-date">2015</span> Interventionist &amp; Consultant, Hangzhou Starry Court Children's Development Center for Autism</li>
+        </ul>
+      </section>
+
+      <!-- ===== CONFERENCE PRESENTATIONS ===== -->
+      <section class="content-section" id="presentations">
+        <h2>Presentations</h2>
+
+        <h3 style="margin-bottom:0.75rem;">Peer-Reviewed Conference Presentations</h3>
+        <ul class="pres-list">
+          <li>
+            <span class="pres-label pres-label-conference">POSTER</span>
+            <strong>Xu, F.</strong>, Gage, N., Waterfield, D., &amp; Ai, J. (2025). Enhancing special educators' high-leverage practices: A single-case study. DEC Annual Conference, Portland, OR.
+          </li>
+          <li>
+            <span class="pres-label pres-label-conference">SESSION</span>
+            He, H., <strong>Xu, F.</strong>, &amp; He, Y. (2025). Perception of inclusion: Challenges and needs from Chinese preschool teacher. DEC Annual Conference, Portland, OR.
+          </li>
+          <li>
+            <span class="pres-label pres-label-conference">ROUNDTABLE</span>
+            Gu, P., <strong>Xu, F.</strong>, Chen, L., Ma, Z., Zhang, M., &amp; Zhang, Y. (2025). Technological affordances and applications of chatbots for conversational skill interventions in autism. AERA, Denver, CO.
+          </li>
+          <li>
+            <span class="pres-label pres-label-conference">POSTER</span>
+            <strong>Xu, F.</strong>, Zeng, S., Gage, N., &amp; Zhang, M. (2024). The use of digital intervention for children with ASD: A meta-analysis. DEC Annual Conference, New Orleans, LA.
+          </li>
+          <li>
+            <span class="pres-label pres-label-conference">SESSION</span>
+            Zeng, S., <strong>Xu, F.</strong>, Kim, M., &amp; Liu, X. (2024). Applying evidence-based practices for young children with ADHD. DEC Annual Conference, New Orleans, LA.
+          </li>
+          <li>
+            <span class="pres-label pres-label-conference">POSTER</span>
+            <strong>Xu, F.</strong>, Ai, J., Estudillo, A., &amp; Huang, J. (2024). Understanding challenges and needs of diverse new special education teachers in rural areas. TED/CEC, Pittsburgh, PA.
+          </li>
+          <li>
+            <span class="pres-label pres-label-conference">POSTER</span>
+            Zeng, S., Ai, J., &amp; <strong>Xu, F.</strong> (2024). Using weighted logistic regression to understand teacher turnover. CRIEI, San Diego, CA.
+          </li>
+          <li>
+            <span class="pres-label pres-label-conference">POSTER</span>
+            Zheng, Q., Snyder, P., &amp; <strong>Xu, F.</strong> (2024). Characterizing preschool teachers' use of teaching practices to promote self-determination. CRIEI, San Diego, CA.
+          </li>
+          <li>
+            <span class="pres-label pres-label-conference">POSTER</span>
+            Zeng, S., An, Z., Corr, C., Ai, J., Zhang, H., &amp; <strong>Xu, F.</strong> (2023). Perceived problem behaviors and implicit bias for Head Start teachers. DEC Annual Conference, Minneapolis, MN.
+          </li>
+          <li>
+            <span class="pres-label pres-label-conference">PRESENTATION</span>
+            <strong>Xu, F.</strong>, Lane, H., &amp; Gage, N. (2023). An observational study of student reading engagement during UFLI intensive intervention. TED/CEC, Long Beach, CA.
+          </li>
+          <li>
+            <span class="pres-label pres-label-conference">KALEIDOSCOPE</span>
+            <strong>Xu, F.</strong>, Lane, H., &amp; Gage, N. (2023). The effect of reading intervention on student engagement for K-3: A systematic review. CEC Convention, Louisville, KY.
+          </li>
+          <li>
+            <span class="pres-label pres-label-conference">POSTER</span>
+            Zheng, Q., Snyder, P., &amp; <strong>Xu, F.</strong> (2021). Observing self-determination teaching practices. DEC Annual Conference (Virtual).
+          </li>
+        </ul>
+
+        <h3 style="margin-top:1.75rem;margin-bottom:0.75rem;">Invited Talks &amp; Workshops</h3>
+        <ul class="pres-list">
+          <li>
+            <span class="pres-label pres-label-invited">INVITED</span>
+            <strong>Xu, F.</strong> (2025). High-leverage practices workshop training. Yakima School District, Yakima, WA. (Clock Hours Provided)
+          </li>
+          <li>
+            <span class="pres-label pres-label-invited">INVITED</span>
+            <strong>Xu, F.</strong> (2024). Educational placement and policy frameworks for students with special needs in the U.S. Beijing Normal University, China.
+          </li>
+          <li>
+            <span class="pres-label pres-label-invited">INVITED</span>
+            <strong>Xu, F.</strong> (2024). What is embedded instruction and how to use it. Hangzhou, China.
+          </li>
+          <li>
+            <span class="pres-label pres-label-invited">INVITED</span>
+            <strong>Xu, F.</strong> (2024). Using embedded instruction to improve social emotional skills for children with disabilities. Hangzhou, China.
+          </li>
+          <li>
+            <span class="pres-label pres-label-invited">INVITED</span>
+            <strong>Xu, F.</strong> (2024). Using embedded instruction to improve on-task behavior for children with disabilities. Hangzhou, China.
+          </li>
+          <li>
+            <span class="pres-label pres-label-invited">INVITED</span>
+            <strong>Xu, F.</strong> (2020). Using embedded instruction to improve learning skills for children with disabilities. Parent Training Program for Children with Special Needs, Medical and Education Center for Exceptional Children, Shenzhen, China.
+          </li>
+          <li>
+            <span class="pres-label pres-label-invited">INVITED</span>
+            <strong>Xu, F.</strong> (2019). Embedded instruction teaching and practice for elementary students in the special education classroom. Teacher Training Program, Yanglingzi Special Education School, Hangzhou, China.
+          </li>
+          <li>
+            <span class="pres-label pres-label-invited">INVITED</span>
+            <strong>Xu, F.</strong> &amp; Chen, G. (2016). A case study of functional behavior assessment on problem behaviors of a student with autism in classrooms. Zhejiang Special Education Teacher Training, Hangzhou, China.
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===== SKILLS & CERTIFICATIONS ===== -->
+      <section class="content-section" id="skills">
+        <h2>Skills &amp; Credentials</h2>
+
+        <h3>Certifications &amp; Licenses</h3>
+        <ul class="award-list">
+          <li><span class="award-date">May 2016</span> Teacher Certification in Primary School (Chinese), Certificate #20163300622000027</li>
+          <li><span class="award-date">Aug 2022</span> Clinical Educator Training for Teacher Preparation</li>
+        </ul>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.25rem;">
+          <div>
+            <h3>Professional Skills</h3>
+            <ul class="pres-list">
+              <li>Conducting practice-based coaching to support teachers' implementation of high-leverage practices</li>
+              <li>Conducting functional behavior assessment &amp; developing behavior intervention plans</li>
+              <li>Providing caregiver, provider, and teacher training</li>
+              <li>Coaching preschool teachers using functional-based intervention package</li>
+              <li>Direct behavior observation system coding skills</li>
+              <li>Supervising undergrad students' practicum using practice-based coaching model</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Software &amp; Languages</h3>
+            <ul class="pres-list">
+              <li><strong>Statistical:</strong> R, SPSS, Stata</li>
+              <li><strong>Productivity:</strong> Microsoft Office (Excel, PowerPoint, Word, Outlook)</li>
+              <li><strong>Languages:</strong> English, Native Mandarin speaker</li>
+            </ul>
+
+            <h3 style="margin-top:1.25rem;">Professional Memberships</h3>
+            <ul class="pres-list">
+              <li>Council for Exceptional Children (CEC) &mdash; Division for Early Childhood (DEC), 2020&ndash;Present</li>
+              <li>CEC &mdash; Teacher Education Division (TED), 2022&ndash;Present</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== FOOTER ===== -->
+      <footer class="page-footer">
+        <p class="motto">"Always give without remembering and always receive without forgetting."</p>
+        <p class="motto" style="font-size:0.9rem;margin-top:-0.25rem;">"Make the World a Better Place for Children."</p>
+        <p>Fang Xu &middot; Heritage University &middot; xu_f@heritage.edu</p>
+        <p style="font-size:0.75rem;margin-top:0.35rem;">Curriculum Vitae updated on 07/02/2026</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- Scroll to top button -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script>
+    (function() {
+      const sections = document.querySelectorAll('.content-section[id]');
+      const sidebarLinks = document.querySelectorAll('#sidebarNav a');
+      const mobileLinks = document.querySelectorAll('#mobileNav a');
+      const scrollTopBtn = document.getElementById('scrollTop');
+
+      // --- Scroll-to-top button visibility ---
+      function updateScrollTop() {
+        if (window.scrollY > 500) {
+          scrollTopBtn.classList.add('visible');
+        } else {
+          scrollTopBtn.classList.remove('visible');
+        }
+      }
+
+      scrollTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // --- Active nav highlighting ---
+      function updateActiveNav() {
+        let currentId = '';
+        const offset = 100;
+
+        sections.forEach(function(section) {
+          const top = section.getBoundingClientRect().top;
+          if (top < offset + 100) {
+            currentId = section.id;
+          }
+        });
+
+        function setActive(links) {
+          links.forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + currentId) {
+              link.classList.add('active');
+            }
+          });
+        }
+
+        setActive(sidebarLinks);
+        setActive(mobileLinks);
+      }
+
+      // --- Smooth scroll for all anchor links ---
+      document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            var navHeight = document.getElementById('mobileNav').offsetHeight;
+            var top = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        });
+      });
+
+      window.addEventListener('scroll', function() {
+        updateScrollTop();
+        updateActiveNav();
+      });
+
+      // Initial calls
+      updateScrollTop();
+      updateActiveNav();
+    })();
+  </script>
+
+</body>
+</html>
