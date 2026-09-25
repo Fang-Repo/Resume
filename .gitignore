@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+# JetBrains
+.idea/
+# 本地素材，不发布到公开仓库（按文件名精确列出，避免误伤站点图标）
+1._Fang_Xu-Vitae_07022026.docx
+newPic.png
+Avatar-old.jpg
+Avatar-original.jpg
